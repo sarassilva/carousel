@@ -1,0 +1,61 @@
+/*
+Carousel 
+Author: Sara Silva
+*/
+
+@charset "utf-8";
+
+html, body, div, span, h2, h3, blockquote, pre, a, code, em, font, img, small, strong, b, i, ol, ul, li, fieldset,
+form, label, table, caption, tbody, tfoot, thead, tr, th, td { margin: 0; border: 0; outline: 0; }
+*{ outline: none; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+fieldset { border: 0; margin: 0; padding: 0; }
+img { max-width: 100%; height: auto; }
+
+:root {
+	--cor-1: #f9fbfe;
+	--cor-2: #bec8d8;
+	--cor-3: #093366;
+	--cor-4: #F2F7FE;
+}
+
+::-moz-selection { background: var(--cor-4); text-shadow: none; color: var(--cor-3); }
+::selection { background: var(--cor-4); text-shadow: none; color: var(--cor-3);}
+
+body { background: var(--cor-1); font-family: 'Inter', sans-serif; color: var(--cor-3);}
+
+/* estrutura  */
+section::before, section::after { content: ''; display: table; }
+section::after { clear: both; }
+.container { margin: auto; width: 95%; max-width: 1000px; position: relative;}
+
+/* carousel  */
+.carousel { width: 100%; float: left; padding: 4rem 0; }
+.caroulsel-hold { display: flex; align-items: center; padding-bottom: 2rem; }
+.carousel h2 { font-weight: 900; font-size: 32px; padding-left: .8rem; }
+.carousel-btn { display: flex; grid-gap: 10px; margin-left: auto;}
+.carousel-btn-left, .carousel-btn-right { font-size: 18px; background: var(--cor-3); color: #fff;width: 32px; text-align: center; padding: 7px 0; border-radius: 32px; border: 0;}
+
+.carousel ul {}
+.carousel-scroll {overflow-x: hidden; margin-right: calc((100vw - 1000px) / 2 * -1); position: relative; overflow-y: hidden; transform: translateZ(0); } 
+.carousel-list { display: flex; list-style: none;padding: 0;transition: 0.5s; }
+.carousel-item { list-style: none; background: #fff; border: 1px solid #F2F7FE; box-shadow: 4px 4px 20px rgba(120, 135, 182, 0.1); border-radius: 5px; padding: 2rem 0 1.2rem; min-width: 315px; margin: 15px 10px;}
+.carousel-item .hold { padding: 0 2rem; }
+.carousel-item .icon { background: url(../icon/icon-analise-de-experimentos.svg); width: 60px; height: 60px; }
+.carousel-item h3 { padding: 1rem 0 1.7rem; }
+.carousel-item .divisao { width: 100%; background: var(--cor-4); height: 1px; display: block; }
+.carousel-item .horas { color: var(--cor-2); padding: 15px 0 0; font-size: 16px; font-weight: 700; display: flex; align-items: center; grid-gap: 10px; }
+.carousel-item .horas .clock { width: 25px; height: 25px; background: url(../icon/icon-carga-horaria.svg);  }
+
+/* responsivo  */
+@media screen and (max-width: 1800px) {
+.carousel-scroll { margin-right: calc((100vw - 1100px) / 2 * -1);}
+}
+
+@media screen and (max-width: 960px) {
+.carousel-scroll { margin-right: 0;}
+}
+
+@media screen and (max-width: 768px) {
+.carousel h2 {  font-size: 25px; }
+.carousel-btn-left, .carousel-btn-right{ height: 26px; width: 26px;font-size: 14px;padding: 6px 0;	}
+}
